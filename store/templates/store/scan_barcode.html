@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FrostPOS - Scan Barcode</title>
+<link rel="stylesheet" href="{% static 'store/css/style.css' %}">
+</head>
+<body>
+<div class="container">
+<h1>Scan Product Barcode</h1>
+<form method="GET" class="actions">
+<input type="text" name="barcode" autofocus placeholder="Scan barcode here">
+<button type="submit" class="btn">Add to Cart</button>
+</form>
+<div class="actions">
+<a href="{% url 'cart' %}" class="btn">View Cart</a>
+<a href="{% url 'products' %}" class="btn">Back to Products</a>
+</div>
+</div>
+</body>
+</html>

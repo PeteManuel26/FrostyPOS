@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FrostPOS - Inventory</title>
+<link rel="stylesheet" href="{% static 'store/css/style.css' %}">
+</head>
+<body>
+<div class="container">
+<h1>Inventory</h1>
+<a href="{% url 'add_product' %}" class="btn">Add New Product</a>
+<ul>
+{% for product in products %}
+<li>
+{{ product.name }} - ₱{{ product.price }} - Stock: {{ product.stock }}
+<a href="{% url 'remove_product' product.id %}" class="btn remove">Remove</a>
+</li>
+{% endfor %}
+</ul>
+<a href="{% url 'products' %}" class="btn">Back to POS</a>
+</div>
+</body>
+</html>

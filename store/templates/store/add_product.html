@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FrostPOS - Add Product</title>
+<link rel="stylesheet" href="{% static 'store/css/style.css' %}">
+</head>
+<body>
+<div class="container">
+<h1>Add New Product</h1>
+<form method="POST">
+{% csrf_token %}
+<p>Name: <input type="text" name="name" required></p>
+<p>Price: <input type="number" name="price" step="0.01" required></p>
+<p>Stock: <input type="number" name="stock" required></p>
+<p>Barcode: <input type="text" name="barcode"></p>
+<p>Category:
+<select name="category">
+{% for cat in categories %}
+<option value="{{ cat.id }}">{{ cat.name }}</option>
+{% endfor %}
+</select>
+</p>
+<button type="submit" class="btn">Add Product</button>
+</form>
+<a href="{% url 'inventory' %}" class="btn">Back to Inventory</a>
+</div>
+</body>
+</html>
