@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-aitzk!=uz^f!=e6_l=6z6r4$jb!-@w7y!w2!-yp)i@ccog*jgi
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://frostypos.onrender.com']
 
 
 # Application definition
